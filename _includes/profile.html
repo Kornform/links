@@ -1,30 +1,19 @@
 <div class="avatar">
-    <img
+    <img {% if site.gravatar %} src="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=200&d=blank"
+        alt="Avatar for {{ site.author.name }}" {% else %} src="{{ site.image }}" alt="{{ site.author.name }}" {% endif
+        %}>
 
-    {% if site.gravatar %}
-
-        src="https://www.gravatar.com/avatar/{{ site.gravatar }}?s=200&d=blank"
-        alt="Avatar for {{ site.author.name }}"
-
+    {% if site.data.branding == true %}
+    <i class="branding">
+        {% include svg/logo.svg %}
+    </i>
     {% else %}
-
-    src="{{ site.image }}" alt="{{ site.author.name }}"
-
+    <h1>{{ site.data.author.name }}</h1>
     {% endif %}
 
-    >
-
-    {% if site.branding == true %}
-        <i class="branding">
-            {% include svg/logo.svg %}
-        </i>
-    {% else %}
-        <h1>{{ site.author.name }}</h1>
-    {% endif %}
-
-    <h3>{{ site.role }}{% if site.company %} @ {{ site.company }}{% endif %}</h3>
+    <h3>{{ site.data.company.role }}{% if site.data.company.name %} @ {{ site.data.company.name }}{% endif %}</h3>
 </div>
 
 <div class="description">
-    <h2>{{ site.description }}</h2>
+    <h2>{{ site.data.company.description }}</h2>
 </div>
