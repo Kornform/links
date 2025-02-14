@@ -1,16 +1,13 @@
 <div class="social-links">
+  {% for service in site.data.social-links %}
+  {% assign key = service[0] %}
+  {% assign data = service[1] %}
 
-  {% for account in site.author %}
-
-  {% assign service_name = account[0] %}
-  {% if service_name == "name" or service_name == "image" %}
-  {% continue %}
+  {% if data.active == true %}
+  <a title="Follow me on {{ key }}" class="social" target="_blank" rel="noopener" href="{{ data.url }}"
+    aria-label="{{ key }}">
+    {{ data.icon | safe }}
+  </a>
   {% endif %}
-
-  {% assign service_data = site.data.social-media[service_name] %}
-  <a title="Follow me on {{ service_name }}" class="social" target="_blank" rel="noopener"
-    href="{{ service_data.url }}{{ account[1] }}" aria-label="{{ service_name }}">{{ service_data.icon }}</a>
-
   {% endfor %}
-
 </div>
