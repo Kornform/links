@@ -61,6 +61,31 @@ Falls Fehler auftreten:
 
 ---
 
+## **5️⃣ Lokales Projekt in GitHub-Repository hochladen**
+
+Falls du Änderungen an deinem Projekt vorgenommen hast und diese in das GitHub-Repository hochladen möchtest, kannst du wie folgt vorgehen:
+
+1. **Sicherstellen, dass dein lokales Projekt die gewünschten Änderungen enthält.**
+2. **Alle Änderungen zum Staging-Bereich hinzufügen:**
+   ```sh
+   git add .
+   ```
+3. **Eine Commit-Nachricht verfassen:**
+   ```sh
+   git commit -m "Lokale Änderungen hochgeladen"
+   ```
+4. **Die Änderungen in das GitHub-Repository pushen:**
+
+   ```sh
+   git push origin main
+   ```
+
+   _(Falls dein Branch anders heißt, z. B. `master` oder `develop`, passe `main` entsprechend an.)_
+
+5. **Prüfen, ob die Änderungen auf GitHub sichtbar sind.**
+
+---
+
 ## **✅ Fazit: Standard-Setup in Kurzform**
 
 ```sh
@@ -70,4 +95,4 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Falls es Fragen oder Probleme gibt, einfach melden! 😊🚀
+---

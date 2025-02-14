@@ -3,7 +3,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://links.maxkorn.de" # the base hostname & protocol for your site, e.g. http://example.com
 theme-color: "#4ade80" # Used for browser theme-color meta tag
 
-gravatar: 7a7483bd1b6f579f86da0f3818b90758 # Gravatar md5 hash
+# gravatar: XXX # Gravatar md5 hash
 branding: false # Your name will be replaced with your logo if set to true, change your logo here "_includes/svg/logo.svg"
 
 sass:
@@ -16,6 +16,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - jekyll-deployment.md
+  - jekyll_server_deployment.md
+  - LICENSE.md
+  - README.md
 
 analytics:
   enabled: false
