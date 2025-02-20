@@ -46,9 +46,7 @@ exclude:
   - LICENSE.md
   - README.md
   - templating-system.png
-  - "/ssitemap.xml"
-  - "style.css"
-  - "/404.html"
+  - reference.txt
 
 analytics:
   enabled: false
