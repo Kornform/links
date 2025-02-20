@@ -1,1 +1,4 @@
 https://links.vyshnav.xyz/
+
+http://links.maxkorn.de/ 
+-> aktuelle version verwendet ein angepastes template system. hier müssen wir noch optimieren

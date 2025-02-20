@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Welcome to Jekyll!"
 date: 2025-02-14 00:32:05 +0100
 categories: posts # creates a path for each string

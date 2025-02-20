@@ -1,0 +1,144 @@
+/**
+ * Dark Theme Syntax Highlighting
+ */
+.highlight {
+  background: #252531; /* Dark background */
+  color: #abb2bf;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* General */
+.highlight .c {
+  color: #5c6370;
+  font-style: italic;
+} /* Comment */
+.highlight .err {
+  color: #e06c75;
+  background-color: #282c34;
+} /* Error */
+.highlight .k {
+  color: #c678dd;
+  font-weight: bold;
+} /* Keyword */
+.highlight .o {
+  color: #56b6c2;
+  font-weight: bold;
+} /* Operator */
+
+/* Strings */
+.highlight .s {
+  color: #98c379;
+} /* String */
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss {
+  color: #98c379;
+} /* Various Strings */
+
+/* Numbers */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+  color: #d19a66;
+} /* Numbers */
+
+/* Functions */
+.highlight .nf {
+  color: #61afef;
+  font-weight: bold;
+} /* Function */
+.highlight .nc {
+  color: #e5c07b;
+  font-weight: bold;
+} /* Class */
+.highlight .nn {
+  color: #e5c07b;
+} /* Namespace */
+.highlight .ne {
+  color: #e06c75;
+  font-weight: bold;
+} /* Exception */
+
+/* Variables */
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: #e06c75;
+} /* Variable */
+.highlight .bp {
+  color: #e5c07b;
+} /* Built-in Pseudo */
+
+/* Tags */
+.highlight .nt {
+  color: #e06c75;
+} /* HTML/XML Tag */
+.highlight .na {
+  color: #d19a66;
+} /* Attribute */
+.highlight .nb {
+  color: #56b6c2;
+} /* Built-in Function */
+.highlight .no {
+  color: #56b6c2;
+} /* Constant */
+
+/* Operators */
+.highlight .ow {
+  color: #c678dd;
+  font-weight: bold;
+} /* Operator Word */
+.highlight .w {
+  color: #ffffff;
+} /* Whitespace */
+
+/* Generic */
+.highlight .gs {
+  font-weight: bold;
+} /* Strong */
+.highlight .gu {
+  color: #61afef;
+  font-weight: bold;
+} /* Subheading */
+.highlight .gt {
+  color: #e06c75;
+} /* Traceback */
+.highlight .ge {
+  font-style: italic;
+} /* Emphasis */
+.highlight .gp {
+  color: #abb2bf;
+  font-weight: bold;
+} /* Prompt */
+.highlight .go {
+  color: #5c6370;
+} /* Output */
+
+/* Code block container */
+pre {
+  background: #252531;
+  color: #abb2bf;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+}
