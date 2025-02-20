@@ -4,3 +4,4 @@ gem 'liquid'
 gem 'jemoji'
 gem 'jekyll-sitemap'
 gem "webrick", "~> 1.8"
+gem 'jekyll-sitemap'

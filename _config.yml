@@ -19,6 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 # port: 4000 // custom port for local development (default is 4000)
+# default is -> "/posts/2025/02/14/welcome-to-jekyll"
+# you can do that too -> permalink: /blog/:title/
+permalink: /:categories/:title/
 
 title: Max Korn | UI & UX Designer
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -43,6 +46,9 @@ exclude:
   - LICENSE.md
   - README.md
   - templating-system.png
+  - "/ssitemap.xml"
+  - "style.css"
+  - "/404.html"
 
 analytics:
   enabled: false

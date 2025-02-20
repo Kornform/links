@@ -1,0 +1,5 @@
+User-agent: *
+# block everything until full launch
+Disallow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
