@@ -11,6 +11,9 @@ body {
   box-sizing: border-box;
 }
 
+.stop-drag {
+  position: relative;
+}
 .stop-drag::before {
   content: "";
   position: absolute;

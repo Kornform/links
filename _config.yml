@@ -47,6 +47,7 @@ exclude:
   - README.md
   - templating-system.png
   - reference.txt
+  - vercel.json
 
 analytics:
   enabled: false
