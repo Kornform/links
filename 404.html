@@ -1,10 +1,13 @@
 ---
 layout: 404
+permalink: /404.html
 ---
 <div style="display: flex; justify-content: center;height: 70vh;">
-  <div style="display: flex; justify-content: center; flex-direction: column; text-align: center; gap: .5rem; width: 360px;">
-    <h1>404</h1>    
+  <div
+    style="display: flex; justify-content: center; flex-direction: column; text-align: center; gap: .5rem; width: 360px;">
+    <h1>404</h1>
     <h6>Whoops! It looks like you’ve stumbled upon a page that doesn’t exist.</h6>
-    {% include button.html url="/" text="Go Back Home" %}
+    {% include button.html url="/" text="Go Back Home" new_tab=false %}
+
   </div>
 </div>

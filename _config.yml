@@ -48,6 +48,7 @@ exclude:
   - templating-system.png
   - reference.txt
   - vercel.json
+  - cargoboard
 
 analytics:
   enabled: false

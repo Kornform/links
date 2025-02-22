@@ -1,15 +1,61 @@
-# Rewrite URLs für "Pretty URLs" (ohne .html)
+# ----------------------------------
+# 🔹 Aktiviert die Rewrite Engine
+# ----------------------------------
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-# Caching verbessern
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresDefault "access plus 1 month"
+# 🔹 Zugriffskontrolle für Apache 2.4 und 2.2
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
 </IfModule>
 
-# Gzip-Kompression aktivieren
+# ----------------------------------
+# 🔹 Fix für Cargoboard (Darf nicht umgeleitet werden)
+# ----------------------------------
+RewriteCond %{REQUEST_URI} ^/cargoboard/
+RewriteRule ^cargoboard(.*)$ cargoboard$1 [L,NC,QSA]
+
+# ----------------------------------
+# 🔹 Pretty URLs für Jekyll (Ohne .html-Endung)
+# ----------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# ----------------------------------
+# 🔹 Caching für statische Inhalte (Optimiert)
+# ----------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+</IfModule>
+
+# ----------------------------------
+# 🔹 Gzip-Komprimierung für schnellere Ladezeiten
+# ----------------------------------
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# ----------------------------------
+# 🔹 Fehlerseiten definieren (Optional)
+# ----------------------------------
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+
+# ----------------------------------
+# 🔹 Sicherheitseinstellungen (Header)
+# ----------------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
 </IfModule>
