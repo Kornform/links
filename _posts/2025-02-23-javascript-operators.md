@@ -17,14 +17,14 @@ Der Optionale Chaining-Operator (`?.`) wird verwendet, um auf verschachtelte Obj
 
 ```javascript
 const item = null;
-console.log(item.title); // ❌ FEHLER: Kann nicht auf `title` zugreifen, weil `item` null ist!
+console.log(item.title); // FEHLER: Kann nicht auf `title` zugreifen, weil `item` null ist!
 ```
 
 #### Mit `?.` (verhindert den Fehler):
 
 ```javascript
 const item = null;
-console.log(item?.title); // ✅ Gibt `undefined` zurück, statt einen Fehler zu werfen.
+console.log(item?.title); // Gibt `undefined` zurück, statt einen Fehler zu werfen.
 ```
 
 ### Erklärung der `?.`-Verwendungen im Code
@@ -35,7 +35,7 @@ console.log(item?.title); // ✅ Gibt `undefined` zurück, statt einen Fehler zu
 | `item?.title?.trim()`                            | Falls `item` existiert, greift es auf `title` zu. Falls `title` existiert, wird `trim()` angewendet. Falls `item` oder `title` nicht existieren, gibt es `undefined` zurück, ohne einen Fehler zu verursachen.                                     |
 | `actualIcons?.icons?.[parseInt(item.iconIndex)]` | Falls `actualIcons` und `icons` existieren, greift es auf das Icon mit dem entsprechenden Index zu. Falls eines davon `null` oder `undefined` ist, wird die ganze Kette gestoppt und gibt `undefined` zurück, anstatt einen Fehler zu verursachen. |
 
-✅ Besonders nützlich, wenn `data.values` manchmal nicht existiert, z. B. wenn eine API keine Werte liefert.
+Besonders nützlich, wenn `data.values` manchmal nicht existiert, z. B. wenn eine API keine Werte liefert.
 
 ### 2️⃣ `&&` (Logisches UND)
 
@@ -45,13 +45,13 @@ console.log(item?.title); // ✅ Gibt `undefined` zurück, statt einen Fehler zu
 
 ```javascript
 const name = "Max";
-console.log(name && "Hallo"); // ✅ "Hallo"
+console.log(name && "Hallo"); // "Hallo"
 
 const empty = "";
-console.log(empty && "Hallo"); // ❌ "" (weil empty leer ist)
+console.log(empty && "Hallo"); // "" (weil empty leer ist)
 ```
 
-✅ **Hilfreich für das bedingte Rendern in React:**
+Hilfreich für das bedingte Rendern in React:
 
 ```javascript
 {
@@ -59,7 +59,7 @@ console.log(empty && "Hallo"); // ❌ "" (weil empty leer ist)
 }
 ```
 
-➡️ Zeigt den `<p>`-Tag **nur an**, wenn `isAdmin` `true` ist.
+Zeigt den `<p>`-Tag **nur an**, wenn `isAdmin` `true` ist.
 
 ### 3️⃣ `||` (Logisches ODER – Fallback-Wert)
 
@@ -69,13 +69,13 @@ console.log(empty && "Hallo"); // ❌ "" (weil empty leer ist)
 
 ```javascript
 const userInput = "";
-console.log(userInput || "Standardwert"); // ✅ "Standardwert"
+console.log(userInput || "Standardwert"); // "Standardwert"
 
 const validInput = "Hallo";
-console.log(validInput || "Standardwert"); // ✅ "Hallo"
+console.log(validInput || "Standardwert"); // "Hallo"
 ```
 
-✅ **Setzt einen Fallback-Wert, falls der erste Wert leer oder `false` ist.**
+Setzt einen Fallback-Wert, falls der erste Wert leer oder `false` ist.
 
 ### 4️⃣ `??` (Nullish Coalescing Operator) – Standardwerte setzen
 
@@ -84,29 +84,29 @@ Der Nullish Coalescing Operator (`??`) wird verwendet, um einen Fallback-Wert **
 #### Unterschied zu `||`
 
 ```javascript
-const value = 0 || "Fallback"; // ❌ Ergebnis: "Fallback" (weil 0 falsy ist)
-const value2 = 0 ?? "Fallback"; // ✅ Ergebnis: 0 (weil `0` nicht `null` oder `undefined` ist)
+const value = 0 || "Fallback"; // Ergebnis: "Fallback" (weil 0 falsy ist)
+const value2 = 0 ?? "Fallback"; // Ergebnis: 0 (weil `0` nicht `null` oder `undefined` ist)
 ```
 
-➡️ **Problem:** Falls `0` oder `""` als gültige Werte existieren, würden sie mit `||` fälschlicherweise ersetzt. `??` vermeidet das Problem.
+Problem: Falls `0` oder `""` als gültige Werte existieren, würden sie mit `||` fälschlicherweise ersetzt. `??` vermeidet das Problem.
 
-✅ **Mit `??` – Nur `null` oder `undefined` triggern den Fallback**
+Mit `??` – Nur `null` oder `undefined` triggern den Fallback
 
 ```javascript
-const value = undefined ?? "Fallback"; // ✅ "Fallback"
-const value2 = null ?? "Fallback"; // ✅ "Fallback"
-const value3 = "" ?? "Fallback"; // ✅ "" (KEIN Fallback!)
-const value4 = 0 ?? "Fallback"; // ✅ 0 (KEIN Fallback!)
+const value = undefined ?? "Fallback"; // "Fallback"
+const value2 = null ?? "Fallback"; // "Fallback"
+const value3 = "" ?? "Fallback"; // "" (KEIN Fallback!)
+const value4 = 0 ?? "Fallback"; // 0 (KEIN Fallback!)
 ```
 
-💡 **Kombination in deinem Code:**
+Kombination in deinem Code:
 
 ```javascript
 const subMenuTitles1 = data?.[5] ?? []; // Falls `data` nicht existiert, wird ein leeres Array `[]` gesetzt
 ```
 
-✅ `data?.[5]` stellt sicher, dass kein Fehler passiert, wenn `data` nicht existiert.  
-✅ `?? []` sorgt dafür, dass `subMenuTitles1` **immer ein Array ist**, selbst wenn `data?.[5]` `undefined` zurückgibt.
+`data?.[5]` stellt sicher, dass kein Fehler passiert, wenn `data` nicht existiert.  
+`?? []` sorgt dafür, dass `subMenuTitles1` **immer ein Array ist**, selbst wenn `data?.[5]` `undefined` zurückgibt.
 
 ### 5️⃣ Fazit – Wann sollte man was nutzen?
 
@@ -116,5 +116,3 @@ const subMenuTitles1 = data?.[5] ?? []; // Falls `data` nicht existiert, wird ei
 | `&&` (Logisches UND)      | Um Inhalte nur anzuzeigen, wenn eine Bedingung `true` ist.                                                       |
 | `\|\|` (Logisches ODER)   | Um falsy Werte (`0`, `false`, `null`, `undefined`, `""`) zu ersetzen.                                            |
 | `??` (Nullish Coalescing) | Nur `null` oder `undefined` ersetzen, aber `0` und `false` beibehalten.                                          |
-
-Mit diesen Kommentaren solltest du jetzt genau verstehen, wo `?.` eingesetzt wird und warum es wichtig ist! 🎯 Falls noch Fragen offen sind, einfach fragen! 😊 🚀

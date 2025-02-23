@@ -2,9 +2,6 @@
  * Dark Theme Syntax Highlighting
  */
 .highlight {
-  background: #252531; /* Dark background */
-  color: #abb2bf;
-  padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
 }
@@ -197,5 +194,19 @@ table {
 // Bootstrap Overrides
 // ---------------------------------------------------------
 pre {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  @include themed(background-color, $dark-100, #000000);
+  @include themed(color, $dark-700, $dark-300);
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  margin-top: 0;
   margin-bottom: 0;
 }
