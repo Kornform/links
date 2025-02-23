@@ -1,5 +1,7 @@
-<div class="avatar stop-drag">
-    <img src="{{ site.data.images.headerImageMax }}" alt="Max: {{ site.data.images.headerImageMaxAlt }}">
+<div class="avatar">
+    <div class="avatar-image stop-drag">
+        <img src="{{ site.data.images.headerImageMax }}" alt="Max: {{ site.data.images.headerImageMaxAlt }}">
+    </div>
 
     {% if site.data.branding == true %}
     <i class="branding">
@@ -9,8 +11,9 @@
     <h1>{{ site.data.author.name }}</h1>
     {% endif %}
 
-    <h3>{{ site.data.author.companyRole }}{% if site.data.author.companyName %} @ {{ site.data.author.companyName }}{%
-        endif %}</h3>
+    <span class="subheading">{{ site.data.author.companyRole }}{% if site.data.author.companyName %} @ {{
+        site.data.author.companyName }}{%
+        endif %}</span>
 </div>
 
 <div class="description">

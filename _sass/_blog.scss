@@ -1,0 +1,228 @@
+.posts {
+  padding: 2rem 0;
+
+  header {
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      @include themed(color, $dark-700, $dark-300);
+    }
+
+    .subheading {
+      font-size: 1.1rem;
+      margin: 0;
+      @include themed(color, $dark-500, $dark-400);
+    }
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    // @media screen and (min-width: 1200px) {
+    //   grid-template-columns: repeat(3, 1fr);
+    // }
+
+    li {
+      margin: 0;
+    }
+
+    .post-card {
+      display: block;
+      padding: 1.5rem;
+      text-decoration: none;
+      border-radius: 1rem;
+      border: 1px solid;
+      transition: all 0.2s ease;
+      @include themed(border-color, $dark-200, $dark-700);
+      @include themed(background-color, $dark-100, $dark-800);
+      @include themed(color, $dark-700, $dark-300);
+
+      &:hover {
+        transform: translateY(-2px);
+        @include themed(border-color, $green-400, $green-500);
+        @include themed(background-color, $green-100, $dark-700);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        @include themed(color, $dark-700, $dark-300);
+      }
+
+      .post-meta {
+        margin: 0.75rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        font-size: 0.9rem;
+        @include themed(color, $dark-500, $dark-400);
+
+        .post-date {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+
+        .post-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          .post-tag {
+            padding: 0.15rem 0.5rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            @include themed(color, $green-700, $green-300);
+            @include themed(background-color, $green-100, $dark-700);
+          }
+        }
+      }
+
+      .post-excerpt {
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        @include themed(color, $dark-500, $dark-400);
+      }
+    }
+  }
+}
+
+.blog-post {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  header {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem;
+      @include themed(color, $dark-700, $dark-300);
+    }
+
+    .article-metadata {
+      font-size: 0.95rem;
+      margin: 0 0 1rem;
+      @include themed(color, $dark-500, $dark-400);
+    }
+
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+
+      .post-tag {
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        @include themed(color, $dark-700, $dark-300);
+        @include themed(background-color, $green-100, $dark-700);
+
+        &:hover {
+          @include themed(background-color, $green-200, $dark-600);
+        }
+      }
+    }
+  }
+
+  .post-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    @include themed(color, $dark-700, $dark-300);
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      @include themed(color, $dark-700, $dark-300);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin: 1.5rem 0 1rem;
+      @include themed(color, $dark-700, $dark-300);
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    pre {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      @include themed(background-color, $dark-100, $dark-900);
+      @include themed(color, $dark-700, $dark-300);
+    }
+
+    code {
+      font-family: "Fira Code", monospace;
+      font-size: 0.9em;
+    }
+
+    blockquote {
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      border-left: 4px solid;
+      @include themed(border-color, $green-400, $green-500);
+      @include themed(color, $dark-500, $dark-400);
+    }
+
+    a {
+      text-decoration: none;
+      @include themed(color, $green-600, $green-400);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul,
+    ol {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-post {
+    padding: 1rem;
+
+    header h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .posts .post-list {
+    margin: 0 1rem;
+  }
+}
