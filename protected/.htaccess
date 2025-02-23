@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "Protected Area"
+AuthUserFile "d:/MAX/07_projects/jekyllrb-linkhub/protected/.htpasswd"
+Require valid-user
+
+# Prevent .htaccess and .htpasswd files from being viewed
+<Files ~ "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>

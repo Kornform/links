@@ -45,20 +45,25 @@
       border-radius: 1rem;
       border: 1px solid;
       transition: all 0.2s ease;
-      @include themed(border-color, $dark-200, $dark-700);
-      @include themed(background-color, $dark-100, $dark-800);
-      @include themed(color, $dark-700, $dark-300);
+      border-color: $dark-700;
+      color: $dark-300;
 
       &:hover {
-        transform: translateY(-2px);
-        @include themed(border-color, $green-400, $green-500);
-        @include themed(background-color, $green-100, $dark-700);
+        background-color: $green-900;
+        border-color: $green-400;
+      }
+
+      &:hover h2,
+      &:hover .post-excerpt,
+      &:hover .post-meta {
+        color: $white !important;
       }
 
       h2 {
         margin: 0;
         font-size: 1.5rem;
         @include themed(color, $dark-700, $dark-300);
+        transition: all 0.2s ease;
       }
 
       .post-meta {
@@ -69,11 +74,13 @@
         align-items: center;
         font-size: 0.9rem;
         @include themed(color, $dark-500, $dark-400);
+        transition: all 0.2s ease;
 
         .post-date {
           display: flex;
           align-items: center;
           gap: 0.25rem;
+          transition: all 0.2s ease;
         }
 
         .post-tags {
@@ -87,6 +94,7 @@
             font-size: 0.8rem;
             @include themed(color, $green-700, $green-300);
             @include themed(background-color, $green-100, $dark-700);
+            transition: all 0.2s ease;
           }
         }
       }
@@ -96,6 +104,7 @@
         font-size: 0.95rem;
         line-height: 1.5;
         @include themed(color, $dark-500, $dark-400);
+        transition: all 0.2s ease;
       }
     }
   }

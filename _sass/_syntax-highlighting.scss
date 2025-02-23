@@ -142,3 +142,60 @@ code {
   font-family: "Courier New", monospace;
   font-size: 14px;
 }
+
+// ---------------------------------------------------------
+// Table Styling
+// ---------------------------------------------------------
+table {
+  width: 100%;
+  margin: 15px 0;
+  border-collapse: collapse;
+  background: #252531;
+  border-radius: 5px;
+  overflow: hidden;
+
+  th,
+  td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #333340;
+  }
+
+  th {
+    background: #1e1e28;
+    color: #61afef;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    color: #abb2bf;
+    font-size: 0.95em;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background: #2a2a37;
+    }
+
+    &:hover {
+      background: #2f2f3d;
+    }
+  }
+
+  // Responsive table
+  @media screen and (max-width: 768px) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// ---------------------------------------------------------
+// Bootstrap Overrides
+// ---------------------------------------------------------
+pre {
+  margin-bottom: 0;
+}

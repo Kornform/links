@@ -59,3 +59,48 @@ ErrorDocument 404 /404.html
     Header set X-Frame-Options "DENY"
     Header set X-XSS-Protection "1; mode=block"
 </IfModule>
+
+# ----------------------------------
+# 🔹 Problematische Content Security Policy (CSP) - Muss angepasst werden
+# ❌ Blockiert externe Skripte, Fonts, Styles, wenn nicht freigegeben!
+# ----------------------------------
+<IfModule mod_headers.c>
+    #Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none';"
+    # ⚠️ Falls du externe CDNs nutzt, hier anpassen!
+    # 🛠️ Beispiel für erlaubte CDNs:  
+    # Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://cdn.example.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'none';"
+</IfModule>
+
+# ----------------------------------
+# 🔹 Referrer Policy
+# ❌ Falls Probleme mit externen Links auftreten, auf "strict-origin-when-cross-origin" setzen
+# ----------------------------------
+<IfModule mod_headers.c>
+    #Header set Referrer-Policy "no-referrer"
+    # 🛠️ Falls zu restriktiv, hier anpassen:
+    # Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ----------------------------------
+# 🔹 Cross-Origin-Policies (CORS)
+# ❌ Kann externe CDNs und API-Zugriffe blockieren
+# ----------------------------------
+<IfModule mod_headers.c>
+    #Header set Cross-Origin-Resource-Policy "same-site"
+    #Header set Cross-Origin-Opener-Policy "same-origin"
+    #Header set Cross-Origin-Embedder-Policy "require-corp"
+    # 🛠️ Falls externe Inhalte blockiert werden, hier anpassen:
+    # Header set Cross-Origin-Resource-Policy "cross-origin"
+    # Header set Cross-Origin-Opener-Policy "unsafe-none"
+    # Header set Cross-Origin-Embedder-Policy "unsafe-none"
+</IfModule>
+
+# ----------------------------------
+# 🔹 HTTP Strict Transport Security (HSTS)
+# ❌ Falls einige externe CDNs HTTP-only sind, kann das Probleme machen
+# ----------------------------------
+<IfModule mod_headers.c>
+    #Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    # 🛠️ Falls Probleme auftreten, hier anpassen:
+    # Header set Strict-Transport-Security "max-age=31536000; preload"
+</IfModule>

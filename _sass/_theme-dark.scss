@@ -3,29 +3,29 @@
     background-color: $dark-900;
     color: $dark-300;
   }
- 
-.branding{
-    path{
+
+  .branding {
+    path {
       fill: $dark-300;
     }
-}
-
-.btn{
-  border-color: $dark-700;
-  color: $dark-300;
-
-  &:hover{
-    background-color: $green-900;
-    border-color: $green-400;
-    color: $dark-100;
-
-    .arrow{
-      color: $dark-100;
-  }
   }
 
-  .arrow{
+  .btn {
+    border-color: $dark-700;
     color: $dark-300;
+
+    &:hover {
+      background-color: $green-900;
+      border-color: $green-400;
+      color: $dark-100;
+
+      .arrow {
+        color: $dark-100;
+      }
+    }
+
+    .arrow {
+      color: $dark-300;
+    }
   }
-  }    
 }
