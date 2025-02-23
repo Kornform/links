@@ -13,15 +13,15 @@
 } /* Comment */
 .highlight .err {
   color: #e06c75;
-  background-color: #282c34;
 } /* Error */
 .highlight .k {
   color: #c678dd;
   font-weight: bold;
 } /* Keyword */
-.highlight .o {
-  color: #56b6c2;
-  font-weight: bold;
+.highlight .o,
+.highlight .sr,
+.highlight span.nx {
+  color: #ffffff;
 } /* Operator */
 
 /* Strings */
@@ -35,7 +35,6 @@
 .highlight .sh,
 .highlight .si,
 .highlight .sx,
-.highlight .sr,
 .highlight .s1,
 .highlight .ss {
   color: #98c379;
@@ -147,7 +146,7 @@ table {
   width: 100%;
   margin: 15px 0;
   border-collapse: collapse;
-  background: #252531;
+  background: #121212;
   border-radius: 5px;
   overflow: hidden;
 
@@ -155,12 +154,12 @@ table {
   td {
     padding: 12px 15px;
     text-align: left;
-    border: 1px solid #333340;
+    border: 1px solid #2d2d2d;
   }
 
   th {
-    background: #1e1e28;
-    color: #61afef;
+    background: #121212;
+    color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.9em;
@@ -174,11 +173,7 @@ table {
 
   tr {
     &:nth-child(even) {
-      background: #2a2a37;
-    }
-
-    &:hover {
-      background: #2f2f3d;
+      background: #121212;
     }
   }
 
@@ -196,8 +191,9 @@ table {
 pre {
   padding: 1rem;
   border-radius: 0.5rem;
+  border: 1px solid #2d2d2d;
   overflow-x: auto;
-  @include themed(background-color, $dark-100, #000000);
+  @include themed(background-color, $dark-100, #121212);
   @include themed(color, $dark-700, $dark-300);
 }
 

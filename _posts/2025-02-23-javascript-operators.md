@@ -55,7 +55,7 @@ Hilfreich für das bedingte Rendern in React:
 
 ```javascript
 {
-  isAdmin && <p>Willkommen, Admin!</p>;
+  isAdmin && <p> Willkommen, Admin! </p>;
 }
 ```
 
